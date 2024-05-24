@@ -5,6 +5,9 @@ from typing import Optional
 
 class _UserBase(pydantic.BaseModel):
     email: str
+    name: str
+    phone: int
+    is_admin: Optional[bool] = False
 
 
 class UserCreate(_UserBase):
@@ -22,8 +25,10 @@ class User(_UserBase):
 
 
 class _LeadBase(pydantic.BaseModel):
+    grafica_name: str
     grafica_url: str
     grafica_type: str
+    grafica_status: bool
 
 
 class LeadCreate(_LeadBase):
